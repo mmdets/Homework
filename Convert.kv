@@ -1,0 +1,34 @@
+<Convert@BoxLayout>:
+    
+    content: "0"
+    out: ""
+    orientation: 'vertical'    
+
+    Label:
+        id: name
+        text: 'Fahrenheit temperature:'
+        pos_hint: {"x": .01, "y": .2}
+    
+    TextInput:
+        id: inputElement
+        multiline: False
+        text: root.content
+        size_hint: .5, .2
+        pos_hint: {"x": .25, "y": .5}
+
+    Label: 
+        text: root.out
+        size_hint: .6, .2
+        pos_hint: {"x": .2, "y": .5}
+
+    Button:
+        text: "Convert"
+        size_hint: .4, .3
+        pos_hint: {"x": .3, "y": .4}
+        on_press: root.convert_press(inputElement.text)
+
+    Button:
+        text: "Quit"
+        size_hint: .4, .3
+        pos_hint: {"x": .3, "y": .4}
+        on_press: root.quit()        

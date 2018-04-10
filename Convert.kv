@@ -1,34 +1,31 @@
-<Convert@BoxLayout>:
-    
+<Convert@FloatLayout>:
     content: "0"
     out: ""
-    orientation: 'vertical'    
 
     Label:
-        id: name
-        text: 'Fahrenheit temperature:'
-        pos_hint: {"x": .01, "y": .2}
-    
+        text: "Temperature in Fahrenheit:"
+        pos_hint: {"x": .1, "y": .7}
+
     TextInput:
         id: inputElement
         multiline: False
         text: root.content
-        size_hint: .5, .2
-        pos_hint: {"x": .25, "y": .5}
+        size_hint: .6, .1
+        pos_hint: {"x": .2, "y": .6}
 
-    Label: 
+    Label:
         text: root.out
-        size_hint: .6, .2
+        size_hint: .6, .1
         pos_hint: {"x": .2, "y": .5}
 
     Button:
         text: "Convert"
-        size_hint: .4, .3
+        size_hint: .3, .1
         pos_hint: {"x": .3, "y": .4}
-        on_press: root.convert_press(inputElement.text)
+        on_press: root.output(inputElement.text)
 
     Button:
         text: "Quit"
-        size_hint: .4, .3
-        pos_hint: {"x": .3, "y": .4}
-        on_press: root.quit()        
+        size_hint: .3, .1
+        pos_hint: {"x": .3, "y": .3}
+        on_press: root.quit()

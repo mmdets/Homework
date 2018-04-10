@@ -1,39 +1,38 @@
-<translate@FloatLayout>:
+<translate@GridLayout>:
     
     content: ""
     out: ""
+    cols: 1
 
-    Label:
-        id: title
-        text: "Translate this word:"
-        pos_hint: {"x": .0, "y": .3}
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
 
-    Label:
-        id: rus
-        text: root.out
-        size_hint: .6, .1
-        pos_hint: {"x": .2, "y": .5}
+        Label:
+            text: "Translate this word:"
+            pos_hint: {"x": .0, "y": .5}
 
-    TextInput:
-        id: inputElement
-        multiline: False
-        text: root.content
-        size_hint: .6, .1
-        pos_hint: {"x": .2, "y": .6}
+        Label:
+            id: rus
+            text: root.out
+            size_hint: .6, .3
+            pos_hint: {"x": .2, "y": .5}
 
-    Button:
-        text: "Translate"
-        size_hint: .6, .1
-        pos_hint: {"x": .2, "y": .4}
-        on_press: root.check_press(inputElement.text)
+        TextInput:
+            id: inputElement
+            multiline: False
+            text: root.content
+            size_hint: .4, .3
+            pos_hint: {"x": .3, "y": .6}
 
-    Label:
-        text: root.out
-        size_hint: .6, .1
-        pos_hint: {"x": .2, "y": .5}
+        Button:
+            text: "Translate"
+            size_hint: .4, .3
+            pos_hint: {"x": .3, "y": .4}
+            on_press: root.check_press(inputElement.text)
 
-    Button:
-        text: "Quit"
-        size_hint: .6, .1
-        pos_hint: {"x": .2, "y": .25}
-        on_press: root.quit()
+        Button:
+            text: "Quit"
+            size_hint: .4, .3
+            pos_hint: {"x": .3, "y": .25}
+            on_press: root.quit()

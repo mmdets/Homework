@@ -13,17 +13,15 @@ def cel(fahr):
 
 class Convert(BoxLayout):
 
-    inputElement = ObjectProperty(None)
-    content = StringProperty(None)
-    name = StringProperty(None)
-    out = StringProperty(None)
-
     def __init__(self, **kwargs):
         super(Convert, self).__init__(**kwargs)
 
-    def convert_press(self, fahr):
+    def output(self, fahr):
         self.content = fahr
         self.out = str(round(cel(int(self.content)), 4))
+
+    def convert_press(self, fahr):
+        self.output(fahr)
 
     def quit(self):
         sys.exit()
@@ -32,8 +30,6 @@ class ConvertApp(App):
 
     def build(self):
         return Convert()
-
-Builder.load_file('Convert.kv')
 
 if __name__ == '__main__':
     ConvertApp().run()

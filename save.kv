@@ -1,0 +1,63 @@
+<Save@BoxLayout>:
+    
+    content: ""
+    out: ""
+    orientation: 'vertical' 
+    spacing: 10   
+
+    Label:
+        text: 'Enter the name:'
+        pos_hint: {"x": .01, "y": .2}
+
+    TextInput:
+        id: inputElement
+        multiline: False
+        text: root.content
+        size_hint: .4, .4
+        pos_hint: {"x": .3, "y": .6}
+
+	Label:
+        text: 'Enter text:'
+        pos_hint: {"x": .01, "y": .2}
+
+	TextInput:
+        id: input
+        multiline: False
+        text: root.content
+        size_hint: .4, .4
+        pos_hint: {"x": .3, "y": .5}
+
+	Label:
+		text: 'Select extension'
+
+	ToggleButton:
+        id: txt
+		size_hint: .4, .3
+        pos_hint: {"x": .3, "y": .4}
+		text: '.txt'
+		group: 'g1'
+        on_press: root.fullname(inputElement.text, txt.text)
+
+
+	ToggleButton:
+        id: html
+		size_hint: .4, .3
+        pos_hint: {"x": .3, "y": .4}
+		text: '.html'
+		group: 'g1'
+        on_press: root.fullname(inputElement.text, html.text)
+
+	Button:
+        text: "Save"
+        size_hint: .4, .3
+        pos_hint: {"x": .3, "y": .4}
+        background_color: (-1, -1, 1, 1)
+        on_press: root.save(inputElement.text, input.text)
+        
+
+    Button:
+        text: "Quit"
+        size_hint: .4, .3
+        pos_hint: {"x": .3, "y": .4}
+        on_press: root.quit()    
+        background_color: (-1, -1, 1, 1)

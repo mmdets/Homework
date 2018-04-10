@@ -1,8 +1,9 @@
 <Convert@BoxLayout>:
     
-    content: "0"
+    content: ""
     out: ""
-    orientation: 'vertical'    
+    orientation: 'vertical' 
+    spacing: 10   
 
     Label:
         id: name
@@ -26,9 +27,11 @@
         size_hint: .4, .3
         pos_hint: {"x": .3, "y": .4}
         on_press: root.convert_press(inputElement.text)
+        background_color: (-1, -1, 1, 1)
 
     Button:
         text: "Quit"
         size_hint: .4, .3
         pos_hint: {"x": .3, "y": .4}
-        on_press: root.quit()        
+        on_press: root.quit()    
+        background_color: (-1, -1, 1, 1)    
